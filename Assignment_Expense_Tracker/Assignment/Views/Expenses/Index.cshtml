@@ -8,6 +8,15 @@
         <div class="d-flex justify-content-end mb-1">
             <a class="btn btn-outline-light" asp-controller="Expenses" asp-action="Create"><b>Add New</b></a>
         </div>
+        <form asp-controller="Expenses" asp-action="index">
+            <div class="d-flex justify-content-end mb-1">
+                <label class="px-2">Form</label>
+                <input style="width:300px" name="from" id="from" class="form-control form-control-sm mr-1" />
+                <label class="px-2">To</label>
+                <input style="width:300px" name="to" id="to" class="form-control form-control-sm mr-1" />
+                <button type="submit" class="btn btn-secondary btn-sm">Show</button>
+            </div>
+        </form>
         <table class="table table-bordered" style="border-color: #647687">
             <thead style="background-color: #B0C4DE">
                 <tr>
@@ -20,16 +29,16 @@
             <tbody>
                 @foreach (var e in Model)
                 {
-                <tr style="background-color: rgba(100, 118, 135, .2)">
-                    <td>@e.ExpenseCategory.CategoryName</td>
-                    <td>@e.ExpenseDate</td>
-                    <td>@e.ExpenseAmount</td>
+                    <tr style="background-color: rgba(100, 118, 135, .2)">
+                        <td>@e.ExpenseCategory.CategoryName</td>
+                        <td>@e.ExpenseDate.ToString("yyyy-MM-dd")</td>
+                        <td>@e.ExpenseAmount.ToString("0.00")</td>
 
-                    <td>
-                        <a class="btn btn-outline-success btn-sm" asp-controller="Expenses" asp-action="Edit" asp-route-id="@e.DailyExpenseId"><i class="bi bi-pencil"></i></a>
-                        <a class="btn btn-outline-danger btn-sm" asp-controller="Expenses" asp-action="Delete" asp-route-id="@e.DailyExpenseId"><i class="bi bi-trash"></i></a>
-                    </td>
-                </tr>
+                        <td>
+                            <a class="btn btn-outline-success btn-sm" asp-controller="Expenses" asp-action="Edit" asp-route-id="@e.DailyExpenseId"><i class="bi bi-pencil"></i></a>
+                            <a class="btn btn-outline-danger btn-sm" asp-controller="Expenses" asp-action="Delete" asp-route-id="@e.DailyExpenseId"><i class="bi bi-trash"></i></a>
+                        </td>
+                    </tr>
                 }
             </tbody>
         </table>
@@ -37,6 +46,22 @@
 </div>
 @section styles{
     <link href="~/libs/icons/font/bootstrap-icons.css" rel="stylesheet" />
+}
+@section scripts {
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+    <script src="~/libs/picker/js/bootstrap-datepicker.js"></script>
+    <script>
+        $(() => {
+            $("#from").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+            $("#to").datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        })
+    </script>
 }
 
 
