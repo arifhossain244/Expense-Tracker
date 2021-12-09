@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HfINgA9X5VAhvDoQ8FNHWQfSE8RiVCtDK/6GwUlRYRVeboZKvKTbJBaFnTVQyu2auVEgPh83AHDS8vdGMnmXmQ==",
+  "dgSpecHash": "Mot0N+/de9SP8xeLWulF4ZM+3LEbX7t9Y3reDkrbLZPkQQQILaygx5yNNIaN091w8gBolChNvaUQpHyjEOMKFQ==",
   "success": true,
-  "projectFilePath": "E:\\IsDB\\Prectices_3_AAF\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj",
+  "projectFilePath": "E:\\IsDB\\Angular dotnet\\GitHub\\Expense-Tracker\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Arif4010\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Arif4010\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

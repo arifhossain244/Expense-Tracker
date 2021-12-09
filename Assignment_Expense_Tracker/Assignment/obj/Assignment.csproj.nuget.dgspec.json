@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\IsDB\\Prectices_3_AAF\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj": {}
+    "E:\\IsDB\\Angular dotnet\\GitHub\\Expense-Tracker\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj": {}
   },
   "projects": {
-    "E:\\IsDB\\Prectices_3_AAF\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj": {
+    "E:\\IsDB\\Angular dotnet\\GitHub\\Expense-Tracker\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\IsDB\\Prectices_3_AAF\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj",
+        "projectUniqueName": "E:\\IsDB\\Angular dotnet\\GitHub\\Expense-Tracker\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj",
         "projectName": "Assignment",
-        "projectPath": "E:\\IsDB\\Prectices_3_AAF\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj",
+        "projectPath": "E:\\IsDB\\Angular dotnet\\GitHub\\Expense-Tracker\\Assignment_Expense_Tracker\\Assignment\\Assignment.csproj",
         "packagesPath": "C:\\Users\\Arif4010\\.nuget\\packages\\",
-        "outputPath": "E:\\IsDB\\Prectices_3_AAF\\Assignment_Expense_Tracker\\Assignment\\obj\\",
+        "outputPath": "E:\\IsDB\\Angular dotnet\\GitHub\\Expense-Tracker\\Assignment_Expense_Tracker\\Assignment\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
