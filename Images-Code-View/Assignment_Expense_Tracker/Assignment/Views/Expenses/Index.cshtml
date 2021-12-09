@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DailyExpense>
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row">
+    <div class="col-12">
+        <h3>Expenses</h3>
+        <div class="d-flex justify-content-end mb-1">
+            <a class="btn btn-outline-light" asp-controller="Expenses" asp-action="Create"><b>Add New</b></a>
+        </div>
+        <table class="table table-bordered" style="border-color: #647687">
+            <thead style="background-color: #B0C4DE">
+                <tr>
+                    <th>ExpenseCategory</th>
+                    <th>ExpenseDate</th>
+                    <th>ExpenseAmount</th>
+                    <th>Edit/Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var e in Model)
+                {
+                <tr style="background-color: rgba(100, 118, 135, .2)">
+                    <td>@e.ExpenseCategory.CategoryName</td>
+                    <td>@e.ExpenseDate</td>
+                    <td>@e.ExpenseAmount</td>
+
+                    <td>
+                        <a class="btn btn-outline-success btn-sm" asp-controller="Expenses" asp-action="Edit" asp-route-id="@e.DailyExpenseId"><i class="bi bi-pencil"></i></a>
+                        <a class="btn btn-outline-danger btn-sm" asp-controller="Expenses" asp-action="Delete" asp-route-id="@e.DailyExpenseId"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section styles{
+    <link href="~/libs/icons/font/bootstrap-icons.css" rel="stylesheet" />
+}
+
+

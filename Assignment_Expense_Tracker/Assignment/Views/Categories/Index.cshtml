@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ExpenseCategory>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h2>Expnese Categories</h2>
+        <div class="d-flex justify-content-end mb-1">
+            <a asp-controller="Categories" asp-action="Create" class="btn btn-primary btn-sm"><b>Add New</b></a>
+        </div>
+    </div>
+    <div class="col-12">
+        <table class="table table-bordered" style="border-color: #647687">
+            <thead style="background-color: #B0C4DE">
+                <tr>
+                    <th>Category Name</th>
+                    <th>
+                        Edit/Delete
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in Model)
+                {
+                <tr style="background-color: rgba(100, 118, 135, .2)">
+                    <td style="color:white">@data.CategoryName</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" asp-controller="Categories" asp-action="Edit" asp-route-id="@data.ExpenseCategoryId"><i class="bi bi-pencil"></i></a>
+                        <a class="btn btn-danger btn-sm" asp-controller="Categories" asp-action="Delete" asp-route-id="@data.ExpenseCategoryId"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section styles{
+    <link href="~/libs/icons/font/bootstrap-icons.css" rel="stylesheet" />
+}

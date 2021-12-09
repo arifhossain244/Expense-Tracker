@@ -1,0 +1,50 @@
+﻿@model ExpenseCategory
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    #Box {
+        margin-left: 180px;
+        margin-right: 270px;
+        background-color: rgba(0, 0, 0, .2);
+        box-shadow: 0 4px 8px 0 rgb(10 52 47 / 0.2), 0 6px 20px 0 rgba(6, 114, 101, .2);
+        padding: 10px;
+    }
+</style>
+<div class="row" id="Box">
+    <div class="col-12">
+        <h3>Confirm Delete</h3>
+        <div id="placeholder"></div>
+        <form method="post" asp-action="Delete" asp-controller="Categories" asp-route-ExpenseCategoryId="@Model.ExpenseCategoryId"
+              id="fCustomers"
+              data-ajax="true"
+              data-ajax-method="POST"
+              data-ajax-mode="replace"
+              data-ajax-update="#placeholder"
+              data-ajax-success="onSuccess">
+            <div class="form-group row mb-2">
+                <label asp-for="CategoryName" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-6">
+                    @Model.CategoryName
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-12 offset-2">
+                    <button type="submit" class="btn btn-outline-danger">Confirm Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class=" col-12">
+        <button type="submit" class="btn btn-outline-light">
+            &lt;&lt;&lt;@Html.ActionLink("Back To List", "Index")
+        </button>
+    </div>
+</div>
+@section scripts{
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+    <script src="~/libs/ajax/jquery.unobtrusive-ajax.js"></script>
+}

@@ -1,0 +1,70 @@
+﻿@model DailyExpense
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+    #Box {
+        margin-left: 180px;
+        margin-right: 270px;
+        background-color: rgba(0, 0, 0, .2);
+        box-shadow: 0 4px 8px 0 rgb(10 52 47 / 0.3), 0 6px 20px 0 rgba(6, 114, 101, .3);
+        padding: 10px;
+    }
+</style>
+<div class="row" id="Box">
+    <div class="col-12">
+        <h3>Edit Expenses</h3>
+        <form method="post" asp-action="Edit" asp-controller="Expenses" asp-route-DailyExpenseId="@Model.DailyExpenseId" enctype="multipart/form-data">
+            <input type="hidden" asp-for="DailyExpenseId" />
+            <div class="form-group row mb-2">
+                <label asp-for="ExpenseDate" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-6">
+                    <input type="text" asp-for="ExpenseDate" class="form-control form-control-sm" />
+                    <span asp-validation-for="ExpenseDate" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label asp-for="ExpenseAmount" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-6">
+                    <input type="text" asp-for="ExpenseAmount" class="form-control form-control-sm" />
+                    <span asp-validation-for="ExpenseAmount" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="ExpenseCategoryId" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-5">
+                    <select asp-for="ExpenseCategoryId" class="form-select form-select-sm" asp-items="@(new SelectList(ViewBag.Categories, "ExpenseCategoryId", "CategoryName"))">
+                        <option selected></option>
+                    </select>
+                    <span asp-validation-for="ExpenseCategoryId" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-10 offset-2">
+                    <button type="submit" class="btn btn-outline-primary">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class=" col-12">
+        <button type="submit" class="btn btn-outline-light">
+            &lt;&lt;&lt;@Html.ActionLink("Back To List", "Index")
+        </button>
+    </div>
+</div>
+@section styles{
+    <link href="~/libs/picker/css/bootstrap-datepicker3.standalone.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+    <script src="~/libs/picker/js/bootstrap-datepicker.js"></script>
+    <script>
+        $("#ExpenseDate").datepicker({
+            format: "yyyy-mm-dd"
+        });
+    </script>
+}
+

@@ -1,0 +1,59 @@
+﻿@model DailyExpense
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+    #Box {
+        margin-left: 180px;
+        margin-right: 270px;
+        background-color: rgba(0, 0, 0, .2);
+        box-shadow: 0 4px 8px 0 rgb(10 52 47 / 0.2), 0 6px 20px 0 rgba(6, 114, 101, .2);
+        padding: 10px;
+    }
+</style>
+<div class="row" id="Box">
+    <div class="col-12">
+        <h3>Delete Expenses</h3>
+        <form method="post" asp-action="Delete" asp-controller="Expenses" asp-route-DailyExpenseId="@Model.DailyExpenseId" enctype="multipart/form-data">
+            <input type="hidden" asp-for="DailyExpenseId" />
+            <div class="form-group row mb-2">
+                <label asp-for="ExpenseDate" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-6">
+                    @Model.ExpenseDate
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <label asp-for="ExpenseAmount" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-6">
+                    @Model.ExpenseAmount
+                </div>
+            </div>
+            <div class="form-group row mb-1">
+                <label asp-for="ExpenseCategoryId" class="col-form-label col-form-label-sm col-2"></label>
+                <div class="col-5">
+                    @Model.ExpenseCategory.CategoryName
+                </div>
+            </div>
+            <div class="form-group row mb-2">
+                <div class="col-10 offset-2">
+                    <button type="submit" class="btn btn-outline-danger">Confirm Delete</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class=" col-12">
+        <button type="submit" class="btn btn-outline-light">
+            &lt;&lt;&lt;@Html.ActionLink("Back To List", "Index")
+        </button>
+    </div>
+</div>
+@section styles{
+    <link href="~/libs/picker/css/bootstrap-datepicker3.standalone.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/libs/jquery/jquery.js"></script>
+    <script src="~/libs/validate/jquery.validate.js"></script>
+    <script src="~/libs/validate/jquery.validate.unobtrusive.js"></script>
+    <script src="~/libs/picker/js/bootstrap-datepicker.js"></script>
+}
